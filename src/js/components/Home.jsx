@@ -1,28 +1,20 @@
-import React from "react";
 
+
+import { FaClock } from "react-icons/fa";
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+//import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-            
-
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+const Home = ({ counter }) => {
+    return (
+        <div className="text-center mt-5">
+            <h1><FaClock /> {counter < 0 ? 0 : counter}</h1>
+            <div className="btn-group mt-3">
+                <button className="btn btn-warning" onClick={() => pauseTimer()}>Pausar</button>
+                <button className="btn btn-success" onClick={() => resumeTimer()}>Reanudar</button>
+                <button className="btn btn-danger" onClick={() => resetTimer()}>Reiniciar</button>
+            </div>
+        </div>
+    );
 };
-
 export default Home;
