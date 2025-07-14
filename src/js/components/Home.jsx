@@ -16,5 +16,6 @@ const Home = ({ counter }) => {
             </div>
         </div>
     );
+     
 };
 export default Home;
